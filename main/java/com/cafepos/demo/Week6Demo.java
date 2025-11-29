@@ -1,0 +1,29 @@
+// package com.cafepos.demo;
+
+// import com.cafepos.smells.OrderManagerGod;
+// import com.cafepos.factory.ProductFactory;
+// import com.cafepos.pricing.*;
+// import com.cafepos.app.CheckoutService;  // Keep using the service package version
+// import com.cafepos.payment.CardPayment;
+
+// public final class Week6Demo {
+//     public static void main(String[] args) {
+//         // Old behavior
+//         String oldReceipt = OrderManagerGod.process("LAT+L", 2, "CARD", "LOYAL5", false);
+
+//         // New behavior with equivalent result
+//         var taxPolicy = new FixedRateTaxPolicy(10);
+//         var pricing = new PricingService(new LoyaltyPercentDiscount(5), taxPolicy);
+//         var printer = new ReceiptPrinter();
+
+//         // Use the service.CheckoutService (Week 6 version) not app.CheckoutService
+//         var checkout = new CheckoutService(/* OrderRepository */ null, pricing);
+//         var cardPayment = new CardPayment("123456781234");
+
+//         String newReceipt = checkout.checkout("LAT+L", 2, "LOYAL5", false, cardPayment);
+
+//         System.out.println("Old Receipt:\n" + oldReceipt);
+//         System.out.println("\nNew Receipt:\n" + newReceipt);
+//         System.out.println("\nMatch: " + oldReceipt.equals(newReceipt));
+//     }
+// }
